@@ -47,6 +47,7 @@ body {
 #heroHead {
     display: inline-block;
     animation: heroHead 1.5s cubic-bezier(.47, 1.64, .41, .8);
+    animation-delay: 2s;
 }
 
 .heroMonth {
@@ -54,6 +55,7 @@ body {
     opacity: 0;
     transform: translateY(-200%);
     animation: heroMonth 0.5s forwards;
+    animation-delay: 3s;
 }
 
 
