@@ -245,4 +245,10 @@ text {
     .card {
         width: 90vw;
     }
+
+    .slopeChart,
+    .priceChart,
+    .distanceChart {
+        display: none;
+    }
 }
