@@ -242,4 +242,8 @@ text {
         width: 90vw;
         justify-content: center;
     }
+
+    .card {
+        width: 90vw;
+    }
 }
