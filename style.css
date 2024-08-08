@@ -46,7 +46,6 @@ body {
 
 #heroHead {
     display: inline-block;
-    transform: translateX(-200%);
     animation: heroHead 1.5s cubic-bezier(.47, 1.64, .41, .8) forwards;
 }
 
