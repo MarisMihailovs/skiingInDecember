@@ -14,7 +14,7 @@ const data = [
         "skiPassPrice6Days": 320,
         "averageHotelPrice6Days": 3200,
         "description": "Val Thorens is renowned for its excellent snow conditions in December, thanks to its high altitude. It typically has one of the longest ski seasons in the Alps.",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/View_of_Val_Thorens_in_the_morning_from_Boismint_1.jpg",
+        "image": "https://mediaim.expedia.com/destination/1/e087e628c2a78b6438b4349f25ccb3f9.jpg",
         "flag": "https://flagcdn.com/w20/fr.png"
     },
     {
@@ -122,7 +122,7 @@ const data = [
         "skiPassPrice6Days": 295,
         "averageHotelPrice6Days": 2400,
         "description": "Les Deux Alpes offers glacier skiing, which ensures good snow conditions in December. The resort’s high-altitude terrain provides reliable early-season skiing.",
-        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/70/da/5d/hiver-2020.jpg?w=1200&h=1200&s=1",
+        "image": "https://restlessfeet.com/wp-content/uploads/2020/09/Glacier-from-Jandri-2.jpg",
         "flag": "https://flagcdn.com/w20/fr.png"
     },
     {
