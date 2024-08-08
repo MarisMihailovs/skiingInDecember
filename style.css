@@ -236,7 +236,8 @@ text {
         font-size: 1rem;
     }
 
-    .card {
+    .data {
         width: 90vw;
+        justify-content: center;
     }
 }
