@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My project
+    </title>
+</head>
+
+<body>
+    <div class="navbar">SKI Central</div>
+    <div class="hero">
+        <h1><span id="heroHead">Ski guide </span><span> </span>
+            <div style="display: inline-block;"><Span id="heroMonth">December</Span></div>
+        </h1>
+    </div>
+    <div class="intro">
+        <div class="introText">
+            <h1>Top 10 Ski Resorts: Your Ultimate Guide to the Best Slopes and Experiences</h1>
+            <h2>Discover the Best Ski Destinations for Your Winter Getaway</h2>
+            <p>Welcome to our comprehensive guide to the top ten ski resorts around the world! Whether you are an expert
+                skier looking for challenging slopes, a family seeking a winter adventure, or a beginner ready to hit
+                the
+                snow for the first time, we've got you covered. Our curated list features detailed reviews, expert
+                recommendations, and insider tips on the best ski resorts. Explore breathtaking mountain landscapes,
+                luxurious accommodations, and unforgettable winter activities. Get ready to find your perfect ski
+                destination and make your next vacation the best one yet!</p>
+        </div>
+    </div>
+    <div class="controls">
+        <label for="sort-options">Sort by:</label>
+        <select id="sort-options" class="styled-select">
+            <option value="totalSlopeKm">Total Slope Length</option>
+            <option value="averageHotelPrice6Days">Average Hotel Price</option>
+            <option value="skiPassPrice6Days">Ski Pass Price</option>
+            <option value="distanceFromAirportKm">Closest to Airport</option>
+        </select>
+    </div>
+    <div class="data"></div>
+    <h1>Slope comparison</h1>
+    <div class="slopeChart"></div>
+    <h1>Price chart</h1>
+    <div class="priceChart"></div>
+    <h1>Distance chart</h1>
+    <div class="distanceChart"></div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
