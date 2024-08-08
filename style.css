@@ -235,4 +235,8 @@ text {
         width: 100vw;
         font-size: 1rem;
     }
+
+    .card {
+        width: 90vw;
+    }
 }
