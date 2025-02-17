@@ -3,8 +3,6 @@ import { data } from "./data.js";
 var backgroundDiv = document.querySelector('.hero');
 backgroundDiv.style.backgroundPosition = 'center 30%';
 
-
-
 document.addEventListener('scroll', function () {
     var scrollPosition = window.scrollY;
     var newPosition = ((scrollPosition * 0.1) + 30);
@@ -18,7 +16,6 @@ document.addEventListener('scroll', function () {
 
     backgroundDiv.style.backgroundPosition = 'center ' + newPosition + '%';
 });
-
 
 let span = document.getElementById("heroMonth");
 
@@ -72,25 +69,25 @@ function updateCards(data) {
         card.append('p').attr('class', 'details').text(`Transfer Options: ${d.transferOptions.join(', ')}`);
         card.append('p').attr('class', 'description').text(d.description);
 
-
-        // Apply transition
+        // Apply transition with delay based on index
         card.transition()
+            .delay(i * 50) // Delay of 50ms multiplied by the index
             .duration(1000) // Duration of the animation in milliseconds
-            .delay(i * 100) // Delay based on the index of the data
             .style('opacity', 1) // Fade-in effect
             .style('transform', 'translateY(0)'); // Slide-in effect
     });
 }
 
 function sortData(criteria) {
+    console.log(`Sorting by: ${criteria}`); // Debugging line
     if (criteria === 'averageHotelPrice6Days' || criteria === 'skiPassPrice6Days' || criteria === 'distanceFromAirportKm') {
         data.sort((a, b) => a[criteria] - b[criteria]);
     } else {
         data.sort((a, b) => b[criteria] - a[criteria]);
     }
-    updateCards(data);
+    console.log(data); // Debugging line to check sorted data
+    updateCards(data); // Ensure updateCards is called after sorting
 }
-
 
 d3.select('#sort-options').on('change', function () {
     const selectedOption = d3.select(this).property('value');
@@ -98,10 +95,8 @@ d3.select('#sort-options').on('change', function () {
 });
 
 // Initial load
-updateCards(data);
 sortData('totalSlopeKm');
-
-
+updateCards(data);
 // slope chart
 // Set up the dimensions and margins of the graph
 const margin = { top: 40, right: 30, bottom: 50, left: 200 },
@@ -188,7 +183,6 @@ svg.append("g")
 
 //price chart
 
-// Create the price chart
 // Create the price chart
 const priceMargin = { top: 40, right: 30, bottom: 50, left: 150 },
     priceWidth = 1000 - priceMargin.left - priceMargin.right,
@@ -343,7 +337,6 @@ function createDistanceChart(data, containerSelector) {
         .style("font-size", "26px")
         .text("Airport");
 }
-
 
 // Call the function to create the distance chart
 createDistanceChart(data, '.distanceChart');
