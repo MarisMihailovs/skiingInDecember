@@ -48,7 +48,7 @@ function updateCards(data) {
         const card = container.append('div')
             .attr('class', 'card')
             .style('opacity', 0) // Start with opacity 0 for fade-in effect
-            .style('transform', 'translateY(10px)'); // Start slightly below for slide-in effect
+            .style('transform', 'translateY(5px)'); // Start slightly below for slide-in effect
 
         card.append('img').attr('class', 'img').attr('src', `${d.image}`);
         card.append('h3').text(d.name);
