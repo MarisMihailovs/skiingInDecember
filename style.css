@@ -223,6 +223,7 @@ text {
 
 @media only screen and (max-width: 600px) {
     .navbar {
+        font-size: 0.8rem;
         height: 40px;
     }
 
@@ -237,6 +238,9 @@ text {
 
     .data {
         width: 90vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         justify-content: center;
     }
 
