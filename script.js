@@ -7,9 +7,18 @@ backgroundDiv.style.backgroundPosition = 'center 30%';
 
 document.addEventListener('scroll', function () {
     var scrollPosition = window.scrollY;
-    backgroundDiv.style.backgroundPosition = 'center ' + ((scrollPosition * 0.1) + 30) + '%';
+    var newPosition = ((scrollPosition * 0.1) + 30);
 
+    // Limit the scroll amount of the background
+    if (newPosition > 50) {
+        newPosition = 50; // Maximum position
+    } else if (newPosition < 30) {
+        newPosition = 30; // Minimum position
+    }
+
+    backgroundDiv.style.backgroundPosition = 'center ' + newPosition + '%';
 });
+
 
 let span = document.getElementById("heroMonth");
 
@@ -36,10 +45,13 @@ function updateCards(data) {
     container.html(''); // Clear existing cards
 
     data.forEach(d => {
-        const card = container.append('div').attr('class', 'card');
+        const card = container.append('div')
+            .attr('class', 'card')
+            .style('opacity', 0) // Start with opacity 0 for fade-in effect
+            .style('transform', 'translateY(10px)'); // Start slightly below for slide-in effect
+
         card.append('img').attr('class', 'img').attr('src', `${d.image}`);
         card.append('h3').text(d.name);
-
         const h3 = card.select('h3');
 
         if (Array.isArray(d.flag)) {
@@ -59,6 +71,13 @@ function updateCards(data) {
         card.append('p').attr('class', 'details').text(`Closest Airport: ${d.closestAirport} (${d.distanceFromAirportKm} km)`);
         card.append('p').attr('class', 'details').text(`Transfer Options: ${d.transferOptions.join(', ')}`);
         card.append('p').attr('class', 'description').text(d.description);
+
+
+        // Apply transition
+        card.transition()
+            .duration(1000) // Duration of the animation in milliseconds
+            .style('opacity', 1) // Fade-in effect
+            .style('transform', 'translateY(0)'); // Slide-in effect
     });
 }
 
