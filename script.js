@@ -44,7 +44,7 @@ const container = d3.select('.data');
 function updateCards(data) {
     container.html(''); // Clear existing cards
 
-    data.forEach(d => {
+    data.forEach((d, i) => {
         const card = container.append('div')
             .attr('class', 'card')
             .style('opacity', 0) // Start with opacity 0 for fade-in effect
@@ -76,6 +76,7 @@ function updateCards(data) {
         // Apply transition
         card.transition()
             .duration(1000) // Duration of the animation in milliseconds
+            .delay(i * 100) // Delay based on the index of the data
             .style('opacity', 1) // Fade-in effect
             .style('transform', 'translateY(0)'); // Slide-in effect
     });
